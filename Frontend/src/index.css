@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-head: "Sofia Sans Condensed";
+  --font-body: "Spline Sans Mono";
+  --font-thin: "Six Caps", sans-serif;
+}
+
+/* body {
+  cursor: none;
+} */
+
+.proximity-text {
+  display: flex;
+  align-items: flex-end; /* 🔥 BASELINE LOCK */
+  font-family: var(--font-thin);
+  line-height: 1;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, 
+.head {
+  font-family: var(--font-head);
+}
+
+p, .para {
+  font-family: var(--font-body);
+}
+
+.thin-font{
+  font-family: var(--font-thin);
+}
+
+.logo {
+  font-family: var(--font-head);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+
