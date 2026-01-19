@@ -119,7 +119,7 @@ export default function Contact() {
               type="submit"
               className="text-gray-900 underline underline-offset-8 font-body text-3xl uppercase tracking-tighter"
             >
-              {loading ? "Sending..." : "Discuss the Project "}&rarr;
+              {loading ? "Sending..." : "Submit"}&rarr;
             </button>
           </div>
         </motion.form>
