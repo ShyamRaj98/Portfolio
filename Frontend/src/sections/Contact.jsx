@@ -31,7 +31,7 @@ export default function Contact() {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:5000/api/contact", form);
+      const res = await axios.post("https://portfolio-x8ln.onrender.com/api/contact", form);
 
       toast.success(res.data.message);
 
