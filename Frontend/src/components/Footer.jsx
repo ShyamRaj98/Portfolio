@@ -1,5 +1,4 @@
 import MaskedScrollText from "./MaskedScrollText";
-import RevealText from "./RevealText";
 
 export default function Footer() {
   return (
@@ -20,9 +19,10 @@ export default function Footer() {
             className="flex flex-wrap justify-end gap-x-6 gap-y-2 
   text-xl sm:text-xl md:text-3xl lg:text-4xl uppercase tracking-wide mt-8"
           >
-            <FooterLink href="https://instagram.com">Instagram</FooterLink>
-            <FooterLink href="https://t.me">Telegram</FooterLink>
-            <FooterLink href="https://facebook.com">Facebook</FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/shyam-raj-29298b245/" target={"_blank"}>
+              LinkedIn
+            </FooterLink>
+            <FooterLink href="https://github.com/ShyamRaj98" target={"_blank"}>Github</FooterLink>
           </div>
         </div>
         <div className="flex justify-between gap-10 md:gap-12">
@@ -35,10 +35,10 @@ export default function Footer() {
               About Me
             </FooterLink>
             <FooterLink href="#services" arrow={false}>
-              Services
+              Experience
             </FooterLink>
             <FooterLink href="#works" arrow={false}>
-              Works
+              Projects
             </FooterLink>
           </div>
 
@@ -79,10 +79,22 @@ export default function Footer() {
   );
 }
 
-function FooterLink({ href, children, arrow = true }) {
+function FooterLink({ href, children, arrow = true, target }) {
+  const handleClick = (e) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <a
       href={href}
+      target={target}
+      onClick={handleClick}
       className="w-fit group relative inline-flex items-center gap-2 uppercase"
     >
       {/* TEXT */}

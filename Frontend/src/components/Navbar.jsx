@@ -1,14 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import RevealText from "./RevealText";
 
 export default function Navbar() {
   const menuRef = useRef([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = ["Skill", "Experience", "Project"];
+  const menuItems = ["About", "Skill", "Experience", "Project"];
   const sectionMap = {
+    About:"about",
     Skill: "skills",
     Experience: "experience",
     Project: "projects",

@@ -53,22 +53,22 @@ export default function Contact() {
       {/* Heading */}
       <ScrollRevealText className={"w-full"}>
         <h3 className="font-display font-bold text-center text-2xl md:text-3xl lg:text-4xl uppercase tracking-[0.01em] mb-2 ">
-          Let’s start the conversation
+          Let’s Build Something Great
         </h3>
       </ScrollRevealText>
       <MaskedScrollText direction="up" start="150%" duration={0.2}>
         <h1 className="w-full font-display text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl text-nowrap font-bold mb-4 uppercase">
-          Great Design
+          Great Products
         </h1>
       </MaskedScrollText>
       <ScrollRevealText className={"w-full"}>
         <p className="font-display text-center text-lg md:text-2xl font-semibold tracking-[1em] mb-4 md:mb-8 uppercase ">
-          Starts with
+          Start with
         </p>
       </ScrollRevealText>
       <MaskedScrollText direction="up" start="160%" duration={0.2}>
         <h1 className="w-full font-display text-center text-3xl sm:text-2xl md:text-5xl lg:text-8xl xl:text-9xl text-nowrap font-bold mb-12 uppercase">
-          Great Collaboration
+          Great Developers
         </h1>
       </MaskedScrollText>
       <div className="max-w-3xl mx-auto">

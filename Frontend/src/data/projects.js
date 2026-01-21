@@ -6,8 +6,8 @@ export const projects = [
     description:
       "Full-stack MERN application with authentication, seat selection, admin panel, and payment integration.",
     tech: ["React", "Node", "MongoDB", "Express"],
-    live: "#",
-    github: "#",
+    live: "https://boookmyticket.netlify.app/",
+    github: "https://github.com/ShyamRaj98/Book-My-Ticket",
   },
   {
     id: 2,
@@ -16,7 +16,6 @@ export const projects = [
     description:
       "React Native app using Firebase for secure prescription upload, storage, and doctor workflows.",
     tech: ["React Native", "Firebase"],
-    live: "#",
     github: "#",
   },
   {
@@ -26,7 +25,6 @@ export const projects = [
     description:
       "Customized Shopify theme with optimized UI, improved performance, and conversion-focused UX.",
     tech: ["Shopify", "Liquid", "JavaScript"],
-    live: "#",
-    github: "#",
+    live: "https://zimsonwatches.com/",
   },
 ];

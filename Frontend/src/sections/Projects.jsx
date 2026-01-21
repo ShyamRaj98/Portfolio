@@ -58,11 +58,11 @@ function StickyCard({ index, color, title, description, tech, live, github }) {
         className="w-full h-full flex items-center justify-center"
       >
         <div
-          className="w-[90%] h-[85%] rounded-3xl flex flex-col gap-5 md:flex-row items-end justify-center text-white text-5xl font-bold p-5"
+          className="w-[90%] h-[85%] rounded-3xl flex flex-col gap-5 md:flex-row items-center justify-center text-white text-5xl font-bold p-5"
           style={{ backgroundColor: color }}
         >
-          <div className="w-full md:w-1/2 flex items-center justify-center">
-            <img src="https://dummyimage.com/600x400/000/fff" alt="image" />
+          <div className="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
+            <img src="https://dummyimage.com/600x400/000/fff" className="rounded-2xl" alt="image" />
           </div>
 
           <div className="w-full md:w-1/2 ">
@@ -80,12 +80,16 @@ function StickyCard({ index, color, title, description, tech, live, github }) {
             </div>
 
             <div className="flex gap-4">
-              <a href={live} className="text-primary hover:underline">
-                Live
-              </a>
-              <a href={github} className="text-primary hover:underline">
-                GitHub
-              </a>
+              {live && (
+                <a href={live} target="_blank" className="text-primary hover:underline">
+                  Live
+                </a>
+              )}
+              {github && (
+                <a href={github} target="_blank" className="text-primary hover:underline">
+                  GitHub
+                </a>
+              )}
             </div>
           </div>
         </div>
