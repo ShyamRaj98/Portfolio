@@ -50,7 +50,7 @@ export default function Footer() {
             <p className="font-body text-xs sm:text-sm lg:text-lg text-gray-500 mt-18 leading-5 md:text-left">
               Address:
               <br />
-              1/2 Rice Mill Road,Kuniamuthur
+              14 Old Pallivasal Street,Sugunapuram East,Kuniamuthur Post
               <br />
               Coimbatore, India
             </p>
