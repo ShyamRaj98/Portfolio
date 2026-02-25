@@ -16,6 +16,11 @@ export default function MaskedScrollText({
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
+    if (height) {
+      ScrollTrigger.refresh();
+    }
+  }, [height]);
+  useEffect(() => {
     if (textRef.current) {
       setHeight(textRef.current.offsetHeight);
     }
@@ -53,6 +58,8 @@ export default function MaskedScrollText({
           start: `${start} ${start}`,
           end: "+=100%",
           scrub: true,
+          invalidateOnRefresh: true,
+          refreshPriority: -1,
         },
       });
 

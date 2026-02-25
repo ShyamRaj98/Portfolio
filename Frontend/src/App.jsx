@@ -21,8 +21,8 @@ export default function App() {
 
       <Cursor />
       <PageWrapper>
-        <main className="pt-20">
-          <div className="mt-6 overflow-hidden">
+        <main className="">
+          <div className="overflow-hidden">
             <Hero />
             <About />
             <Skills />
