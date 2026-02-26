@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 export function ScrollingImage({ images, setPaused, active }) {
-
   return (
     <div className="flex flex-col items-center gap-4">
       {/* Macbook Frame */}
@@ -45,7 +44,7 @@ export function ScrollingImage({ images, setPaused, active }) {
 
 export function PremiumDots({ count, active, onChange }) {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 py-2">
       {Array.from({ length: count }).map((_, i) => (
         <button
           key={i}

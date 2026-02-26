@@ -5,7 +5,7 @@ import MaskedScrollText from "../components/MaskedScrollText";
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-white py-30">
+    <section id="skills" className="bg-white py-15">
       <MaskedScrollText start="150%" duration={0.5}>
         <h2 className="w-full text-center text-[5rem] sm:text-[8rem] md:text-[12rem] lg:text-[15rem] text-nowrap font-extrabold uppercase tracking-tight py-2">
           Skills
@@ -41,23 +41,34 @@ function FloatingCursorIcon({ name, Icon, color }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isHover, setIsHover] = useState(false);
 
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
   return (
     <motion.div
-      className="group relative flex flex-col items-center px-6 py-4 cursor-default"
-      onMouseEnter={() => setIsHover(true)}
+      className="group relative flex flex-col items-center px-6 py-4"
+      onMouseEnter={() => !isMobile && setIsHover(true)}
       onMouseLeave={() => {
-        setIsHover(false);
-        setOffset({ x: 0, y: 0 });
+        if (!isMobile) {
+          setIsHover(false);
+          setOffset({ x: 0, y: 0 });
+        }
       }}
       onMouseMove={(e) => {
+        if (isMobile) return; // ❌ disable on mobile
+
         const rect = e.currentTarget.getBoundingClientRect();
         setOffset({
-          x: ((e.clientX - rect.left) / rect.width - 0.8) * 10,
-          y: ((e.clientY - rect.top) / rect.height - 0.8) * 10,
+          x: ((e.clientX - rect.left) / rect.width - 0.5) * 8,
+          y: ((e.clientY - rect.top) / rect.height - 0.5) * 8,
         });
       }}
-      animate={{ x: offset.x, y: offset.y }}
-      transition={{ type: "spring", stiffness: 300, damping: 10 }}
+      animate={
+        isMobile
+          ? {} // no parallax on mobile
+          : { x: offset.x, y: offset.y }
+      }
+      transition={{ type: "spring", stiffness: 200, damping: 15 }}
     >
       {/* Glow */}
       <div
@@ -68,17 +79,19 @@ function FloatingCursorIcon({ name, Icon, color }) {
       {/* Icon */}
       {Icon && (
         <motion.div
-          className="relative z-10 text-2xl md:text-3xl lg:text-8xl mb-4 filter grayscale transition-all duration-300 group-hover:grayscale-0"
+          className="relative z-10 text-4xl md:text-6xl lg:text-8xl mb-4 transition-all duration-300"
           style={{ color }}
           animate={
-            isHover
-              ? { y: 0 } // ❌ no floating on hover
-              : { y: ["0px", "-40px", "0px"] } // ✅ floating
+            isMobile
+              ? { y: ["0px", "-8px", "0px"] } // small float mobile
+              : isHover
+              ? { y: 0 }
+              : { y: ["0px", "-20px", "0px"] } // desktop float
           }
           transition={{
             y: {
               repeat: isHover ? 0 : Infinity,
-              duration: 3,
+              duration: isMobile ? 2.5 : 3,
               ease: "easeInOut",
             },
           }}

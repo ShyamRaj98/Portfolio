@@ -9,7 +9,7 @@ import {
 } from "../components/FrameInsideScrollImage.jsx";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("MERN Stack");
   useEffect(() => {
     ScrollTrigger.refresh();
   }, [activeTab]);
@@ -117,7 +117,7 @@ function ProjectCard({
         className="w-full h-full flex items-center justify-center"
       >
         <div
-          className="w-[90%] h-[85%] rounded-3xl flex flex-col md:flex-row gap-5 items-center justify-center text-white p-6"
+          className="w-[90%] h-[85%] rounded-3xl flex flex-col lg:flex-row gap-5 items-center justify-center text-white p-6"
           style={{ backgroundColor: color }}
         >
           {/* IMAGE */}
@@ -130,9 +130,9 @@ function ProjectCard({
           </div>
 
           {/* CONTENT */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full lg:w-1/2">
             {/* Category Badge */}
-            <span className="px-4 py-1 text-xs uppercase bg-white/20 rounded-full">
+            <span className="px-4 py-1 mb-5 text-xs uppercase bg-white/20 rounded-full">
               {category}
             </span>
 
